@@ -6,6 +6,12 @@ body {
     margin-top: 20px;
 }
 
+.timer-upload-button {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .message-list {
     display: flex;
     flex-wrap: wrap;

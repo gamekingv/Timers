@@ -77,6 +77,9 @@ let database = {
             };
         });
     },
+    deleteAllTimers() {
+        return new Promise(resolve => this.startStore(DB_INFO.DB_STORE_NAME.TIMER).clear().onsuccess = () => resolve());
+    },
     addMessage(message) {
         return new Promise((resolve, reject) => {
             let request = this.startStore(DB_INFO.DB_STORE_NAME.MESSAGE).add(message);
@@ -143,6 +146,9 @@ let database = {
                 }
             };
         });
+    },
+    deleteAllMessages() {
+        return new Promise(resolve => this.startStore(DB_INFO.DB_STORE_NAME.MESSAGE).clear().onsuccess = () => resolve());
     },
     getMessagesCount(state, type) {
         return new Promise((resolve, reject) => {

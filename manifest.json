@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "__MSG_extensionName__",
-    "version": "0.2.3",
+    "version": "0.3.0",
     "description": "__MSG_extensionDescription__",
     "default_locale": "en",
     "icons": {
@@ -30,7 +30,8 @@
     },
     "permissions": [
         "<all_urls>",
-        "storage"
+        "storage",
+        "downloads"
     ],
     "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';"
 }

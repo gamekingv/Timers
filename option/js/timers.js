@@ -128,6 +128,43 @@ Vue.component('timers', {
                 await background.timer.toggleTimer(id);
             }
             catch (e) { handleError(e); }
+        },
+        async importTimer(e) {
+            return new Promise((resolve, reject) => {
+                let reader = new FileReader();
+                reader.addEventListener('loadend', async event => {
+                    let timers;
+                    try {
+                        timers = JSON.parse(event.target.result);
+                        timers.forEach(item => item.timePoint = new Date(item.timePoint));
+                        await background.timer.deleteAllTimers();
+                        await background.message.deleteAllMessages();
+                        for (let timer of timers) {
+                            await background.timer.updateTimer(timer, true);
+                        }
+                        await this.formRefresh();
+                    }
+                    catch (e) { reject(e); }
+                });
+                reader.readAsText(e.file);
+            });
+        },
+        async exportTimer() {
+            try {
+                let timers = await background.timer.getAllTimers();
+                timers.forEach(item => {
+                    delete item.next;
+                    delete item.last;
+                    delete item.lastResult;
+                });
+                let file = new Blob([JSON.stringify(timers)], { type: 'application/json' });
+                browser.downloads.download({
+                    url: URL.createObjectURL(file),
+                    filename: 'all timers.json',
+                    saveAs: true
+                });
+            }
+            catch (e) { handleError(e); }
         }
     }
 });

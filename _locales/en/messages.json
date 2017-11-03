@@ -23,6 +23,14 @@
         "message": "Refresh",
         "description": "The refresh button in the timers' tab."
     },
+    "optionPageTimerButtonImport": {
+        "message": "Import",
+        "description": "The import button in the timers' tab."
+    },
+    "optionPageTimerButtonExport": {
+        "message": "Export",
+        "description": "The export button in the timers' tab."
+    },
     "optionPageTimerListEmpty": {
         "message": "No Timer",
         "description": "Hint shown when the timer list is empty."

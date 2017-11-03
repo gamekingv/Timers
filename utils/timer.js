@@ -62,6 +62,9 @@ let timer = {
     async getAllTimers() {
         return await database.getAllTimers();
     },
+    async deleteAllTimers() {
+        return await database.deleteAllTimers();
+    },
     clearTimer(id) {
         let index = this.timers.findIndex(item => item.id == id);
         if (index > -1) {

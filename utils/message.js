@@ -41,6 +41,9 @@ let message = {
     async getAllMessages() {
         return await database.getAllMessages();
     },
+    async deleteAllMessages() {
+        return await database.deleteAllMessages();
+    },
     async getMessagesCount(state) {
         if (state && state != 'unread') throw state;
         return await database.getMessagesCount(state, setting.badgeOnlyFail ? 'fail' : null);

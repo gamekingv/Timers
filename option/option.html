@@ -65,6 +65,10 @@
             </el-dialog>
             <el-button type="primary" @click="dialogFormVisible = true">{{ i18nMessage.timerButtonAdd }}</el-button>
             <el-button type="primary" @click="formRefresh(true)">{{ i18nMessage.timerButtonRefresh }}</el-button>
+            <el-upload class="timer-upload-button" action="" :show-file-list="false" accept="application/json" :http-request="importTimer">
+                <el-button type="primary">{{ i18nMessage.timerButtonImport }}</el-button>
+            </el-upload>
+            <el-button type="primary" @click="exportTimer">{{ i18nMessage.timerButtonExport }}</el-button>
             <el-table class="timer-list" :data="timers" border :empty-text="i18nMessage.timerListEmpty">
                 <el-table-column :label="i18nMessage.timerListEnable" width="90" align="center">
                     <template scope="scope">
