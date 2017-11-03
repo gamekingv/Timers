@@ -1,0 +1,108 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+}
+
+#popup-panel {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.message-list {
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin-right: -17px;
+}
+
+.message-list-empty {
+    margin: 20px auto;
+}
+
+.message-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color .2s;
+    cursor: pointer;
+}
+
+.message-item:hover {
+    background-color: #eee;
+}
+
+.message-icon {
+    text-align: center;
+    font-size: 2em;
+    margin: 15px 5px;
+    width: 2em;
+}
+
+.message-icon.success {
+    color: #13CE66;
+}
+
+.message-icon.fail {
+    color: #FF4949;
+}
+
+.message-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.message-info {
+    flex: 1;
+}
+
+.message-info,
+.message-time,
+.message-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.message-time,
+.message-name {
+    color: #99A9BF;
+}
+
+.message-item .message-time {
+    display: none;
+}
+
+.message-item:hover .message-time {
+    display: inherit;
+}
+
+.message-item:hover .message-name {
+    display: none;
+}
+
+.message-button {
+    min-width: 250px;
+    height: 40px;
+    display: flex;
+}
+
+.message-button>div {
+    flex: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eee;
+    border-top: 1px solid #e0e0e0;
+    transition: background-color .2s;
+}
+
+.message-button>div:hover {
+    background-color: #e0e0e0;
+}

@@ -1,0 +1,116 @@
+body {
+    margin: 10px;
+}
+
+.timer-list {
+    margin-top: 20px;
+}
+
+.message-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.message-item {
+    width: 240px;
+    margin: 10px;
+    transition: box-shadow 0.5s;
+}
+
+.message-item:hover {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .22), 0 0 6px 0 rgba(0, 0, 0, .14), 0 0 8px 0 rgba(0, 0, 0, .14);
+}
+
+.message-item>* {
+    padding: 0;
+}
+
+.message-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 5px 10px;
+    border-top: 1px solid #d1dbe5;
+}
+
+.success-icon {
+    color: #13CE66;
+}
+
+.fail-icon {
+    color: #FF4949;
+}
+
+.timer-name {
+    color: #20a0ff;
+    margin: 0 20px 0 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    flex: 1;
+    font-size: 1.3em;
+}
+
+.message-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.message-time {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.message-time-tag {
+    color: #99A9BF;
+    font-size: 0.8em;
+}
+
+.message-info {
+    font-size: 0.8em;
+}
+
+.message-info p {
+    color: #99A9BF;
+    margin: 0 -17px 0 0;
+    word-wrap: break-word;
+    height: 11em;
+    padding: 1em;
+    overflow-y: scroll;
+}
+
+.message-info .message-unread {
+    color: #48576a;
+}
+
+.message-list-empty {
+    text-align: center;
+    margin: 20px auto 0;
+    color: #5e7382;
+    box-shadow: none;
+    width: 50%;
+}
+
+.message-operate {
+    display: flex;
+    align-items: center;
+}
+
+.message-pager {
+    flex: 1;
+    text-align: right;
+}
+
+.setting-list {
+    margin-top: 20px;
+}
+
+.script-editor>div>.CodeMirror {
+    line-height: 1.5;
+    border-radius: 4px;
+    border: 1px solid #bfcbd9;
+}

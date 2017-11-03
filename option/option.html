@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Setting</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="icon/timer.ico" type="image/x-icon" />
+    <link href="/libs/css/element.css" rel="stylesheet">
+    <link href="/libs/css/codemirror.css" rel="stylesheet">
+    <link href="/libs/css/base16-light.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/init.js"></script>
+</head>
+
+<body>
+    <el-tabs id="setting-panel" v-model="activePanel" type="card" @tab-click="handleTabChange">
+        <el-tab-pane :label="i18nMessage.timerTitle" name="timers">
+            <timers></timers>
+        </el-tab-pane>
+        <el-tab-pane :label="i18nMessage.messageTitle" name="messages">
+            <messages></messages>
+        </el-tab-pane>
+        <el-tab-pane :label="i18nMessage.settingTitle" name="setting">
+            <settings></settings>
+        </el-tab-pane>
+    </el-tabs>
+
+    <template id="timer-tab">
+        <div>
+            <el-dialog :title="i18nMessage.timerButtonAdd" :visible.sync="dialogFormVisible" lock-scroll @close="resetForm">
+                <el-form :model="form" ref="form" :rules="rules" label-width="120px">
+                    <el-form-item :label="i18nMessage.timerFormName" prop="name">
+                        <el-input v-model="form.name" :placeholder="i18nMessage.timerFormNameHint"></el-input>
+                    </el-form-item>
+                    <el-form-item :label="i18nMessage.timerFormType" prop="type">
+                        <el-select v-model="form.type" :placeholder="i18nMessage.timerFormTypeHint">
+                            <el-option v-for="(index, type) in types" :label="index" :value="type"></el-option>
+                        </el-select>
+                    </el-form-item>
+                    <el-form-item :label="i18nMessage.timerFormDelay" prop="delay" v-show="form.type == 'afterBoot'">
+                        <el-input-number v-model="form.delay" :min="1"></el-input-number> {{ i18nMessage.unitSecond }}
+                    </el-form-item>
+                    <el-form-item :label="i18nMessage.timerFormTimePoint" prop="timePoint" v-show="form.type == 'daily' || form.type == 'once'">
+                        <el-time-picker v-model="form.timePoint" :placeholder="i18nMessage.timerFormTimePointHint" v-show="form.type == 'daily'"></el-time-picker>
+                        <el-date-picker v-model="form.timePoint" type="datetime" :placeholder="i18nMessage.timerFormTimePointHint" v-show="form.type == 'once'"></el-date-picker>
+                    </el-form-item>
+                    <el-form-item :label="i18nMessage.timerFormTimeInterval" prop="interval" v-show="form.type == 'interval'">
+                        <el-input-number v-model="form.interval" :min="1"></el-input-number> {{ i18nMessage.unitSecond }}
+                    </el-form-item>
+                    <el-form-item :label="i18nMessage.timerFormRetry" prop="retry">
+                        <el-switch v-model="form.retry" on-text="" off-text=""></el-switch>
+                    </el-form-item>
+                    <el-form-item :label="i18nMessage.timerFormRetryInterval" prop="retryInterval" v-show="form.retry">
+                        <el-input-number v-model="form.retryInterval" :min="1"></el-input-number> {{ i18nMessage.unitSecond }}
+                    </el-form-item>
+                    <el-form-item class="script-editor" :label="i18nMessage.timerFormScripts" prop="scripts">
+                        <code-mirror :scripts.sync="form.scripts"></code-mirror>
+                    </el-form-item>
+                </el-form>
+                <div slot="footer" class="dialog-footer">
+                    <el-button icon="close" @click="dialogFormVisible = false">{{ i18nMessage.timerFormCancel }}</el-button>
+                    <el-button type="primary" icon="check" @click="submitForm" :loading="loading">{{ i18nMessage.timerFormConfirm }}</el-button>
+                </div>
+            </el-dialog>
+            <el-button type="primary" @click="dialogFormVisible = true">{{ i18nMessage.timerButtonAdd }}</el-button>
+            <el-button type="primary" @click="formRefresh(true)">{{ i18nMessage.timerButtonRefresh }}</el-button>
+            <el-table class="timer-list" :data="timers" border :empty-text="i18nMessage.timerListEmpty">
+                <el-table-column :label="i18nMessage.timerListEnable" width="90" align="center">
+                    <template scope="scope">
+                        <el-checkbox v-model="scope.row.enable" @change="toggleTimer(scope.row.id)"></el-checkbox>
+                    </template>
+                </el-table-column>
+                <el-table-column :label="i18nMessage.timerListName" align="center">
+                    <template scope="scope">
+                        <p class="table-cell">{{ scope.row.name }}</p>
+                    </template>
+                </el-table-column>
+                <el-table-column :label="i18nMessage.timerListType" align="center">
+                    <template scope="scope">
+                        <p class="table-cell">{{ types[scope.row.type] }}</p>
+                    </template>
+                </el-table-column>
+                <el-table-column :label="i18nMessage.timerListLast" align="center">
+                    <template scope="scope">
+                        <p class="table-cell">{{ scope.row.last ? new Date(scope.row.last).toLocaleString() : '' }}</p>
+                    </template>
+                </el-table-column>
+                <el-table-column :label="i18nMessage.timerListLastResult" align="center">
+                    <template scope="scope">
+                        <p class="table-cell">{{ states[scope.row.lastResult] }}</p>
+                    </template>
+                </el-table-column>
+                <el-table-column :label="i18nMessage.timerListNext" align="center">
+                    <template scope="scope">
+                        <p class="table-cell">{{ scope.row.next ? new Date(scope.row.next).toLocaleString() : '' }}</p>
+                    </template>
+                </el-table-column>
+                <el-table-column :label="i18nMessage.timerListModify" width="120" align="center">
+                    <template scope="scope">
+                        <div class="table-buttons">
+                            <el-tooltip :content="i18nMessage.timerListButtonEdit" placement="top" open-delay="800">
+                                <el-button size="small" icon="edit" @click="editTimer(scope.row)"></el-button>
+                            </el-tooltip>
+                            <el-tooltip :content="i18nMessage.timerListButtonDelete" placement="top" open-delay="800">
+                                <el-button size="small" icon="delete" type="danger" @click="deleteTimer(scope.row.id)"></el-button>
+                            </el-tooltip>
+                        </div>
+                    </template>
+                </el-table-column>
+            </el-table>
+        </div>
+    </template>
+
+    <template id="message-tab">
+        <div>
+            <div class="message-operate">
+                <el-button type="primary" @click="formRefresh(true)">{{ i18nMessage.messageButtonRefresh }}</el-button>
+                <el-button type="primary" @click="setAllRead">{{ i18nMessage.messageButtonAllRead }}</el-button>
+                <el-pagination class="message-pager" layout="prev, pager, next" :current-page.sync="page" :page-size="count" :total="total"
+                    @current-change="handlePageChange" v-if="total > count"></el-pagination>
+            </div>
+            <div class="message-list" v-if="messages.length > 0">
+                <el-card class="message-item" v-for="message in messages" :key="message.id">
+                    <div class="message-info">
+                        <p :class="`message-${message.state}`">{{ message.info }}</p>
+                    </div>
+                    <div class="message-footer">
+                        <div class="message-title">
+                            <p class="timer-name">{{ message.timerName }}</p>
+                            <el-tag :type="message.type == 'success' ? 'success' : 'danger'" close-transition>{{ types[message.type] }}</el-tag>
+                        </div>
+                        <div class="message-time">
+                            <span class="message-time-tag">{{ parseTime(message.id) }}</span>
+                            <span>
+                                <el-button size="small" type="text" icon="check" v-if="message.state == 'unread'" @click="setRead(message)"></el-button>
+                                <el-button size="small" type="text" icon="delete2" @click="deleteMessage(message.id)"></el-button>
+                            </span>
+                        </div>
+                    </div>
+                </el-card>
+            </div>
+            <el-card class="message-list-empty" v-else>
+                {{ i18nMessage.messageListEmpty }}
+            </el-card>
+        </div>
+    </template>
+
+    <template id="setting-tab">
+        <div>
+            <el-form class="setting-list" :model="form" :rules="rules" label-width="300px">
+                <el-form-item :label="i18nMessage.settingItemsPerPage" prop="itemsPerPage">
+                    <el-input-number v-model="form.itemsPerPage" :min="1" @change="handleChange('itemsPerPage', $event)"></el-input-number>
+                </el-form-item>
+                <el-form-item :label="i18nMessage.settingMaxMessages" prop="maxMessages">
+                    <el-input-number v-model="form.maxMessages" :min="0" @change="handleChange('maxMessages', $event)"></el-input-number> {{ i18nMessage.settingMaxMessagesHint }}
+                </el-form-item>
+                <el-form-item :label="i18nMessage.settingItemsShown" prop="maxMessages">
+                    <el-input-number v-model="form.itemsShown" :min="0" @change="handleChange('itemsShown', $event)"></el-input-number>
+                </el-form-item>
+                <el-form-item :label="i18nMessage.settingBadgeOnlyFail">
+                    <el-switch v-model="form.badgeOnlyFail" on-text="" off-text="" @change="handleChange('badgeOnlyFail', $event)"></el-switch>
+                </el-form-item>
+            </el-form>
+        </div>
+    </template>
+
+    <template id="code-mirror">
+        <textarea ref="textarea"></textarea>
+    </template>
+</body>
+
+<script src="/libs/js/codemirror.js"></script>
+<script src="/libs/js/mode/javascript.js"></script>
+<script src="/libs/js/vue.min.js"></script>
+<script src="/libs/js/element.js"></script>
+<script src="/libs/locale/en.js"></script>
+<script src="/libs/locale/init.js"></script>
+<script src="js/timers.js"></script>
+<script src="js/messages.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/option.js"></script>
+
+</html>

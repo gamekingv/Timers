@@ -1,0 +1,246 @@
+{
+    "extensionName": {
+        "message": "Timers",
+        "description": "扩展名称"
+    },
+    "extensionDescription": {
+        "message": "自定义定时器，执行指定脚本。",
+        "description": "扩展描述"
+    },
+    "optionPageTitle": {
+        "message": "设置",
+        "description": "设置页面的标题"
+    },
+    "optionPageTimerTitle": {
+        "message": "定时器",
+        "description": "设置页中定时器标签的标题"
+    },
+    "optionPageTimerButtonAdd": {
+        "message": "添加",
+        "description": "添加定时器的按钮"
+    },
+    "optionPageTimerButtonRefresh": {
+        "message": "刷新",
+        "description": "刷新定时器列表的按钮"
+    },
+    "optionPageTimerListEmpty": {
+        "message": "暂无任何定时器",
+        "description": "定时器列表为空时显示的提示信息"
+    },
+    "optionPageTimerListEnable": {
+        "message": "启用",
+        "description": "定时器列表第一列列头"
+    },
+    "optionPageTimerListName": {
+        "message": "名称",
+        "description": "定时器列表第二列列头"
+    },
+    "optionPageTimerListType": {
+        "message": "类型",
+        "description": "定时器列表第三列列头"
+    },
+    "optionPageTimerListLast": {
+        "message": "上一次执行时间",
+        "description": "定时器列表第四列列头"
+    },
+    "optionPageTimerListLastResult": {
+        "message": "上一次执行结果",
+        "description": "定时器列表第五列列头"
+    },
+    "optionPageTimerListStateSuccess": {
+        "message": "成功",
+        "description": "定时器成功状态"
+    },
+    "optionPageTimerListStateFail": {
+        "message": "失败",
+        "description": "定时器失败状态"
+    },
+    "optionPageTimerListStateRunning": {
+        "message": "运行中",
+        "description": "定时器运行中状态"
+    },
+    "optionPageTimerListStateBeforeTrigger": {
+        "message": "未执行",
+        "description": "定时器未执行状态"
+    },
+    "optionPageTimerListNext": {
+        "message": "下一次执行时间",
+        "description": "定时器列表第六列列头"
+    },
+    "optionPageTimerListModify": {
+        "message": "操作",
+        "description": "定时器列表第七列列头"
+    },
+    "optionPageTimerListButtonEdit": {
+        "message": "修改",
+        "description": "定时器列表修改按钮提示"
+    },
+    "optionPageTimerListButtonDelete": {
+        "message": "删除",
+        "description": "定时器列表删除按钮提示"
+    },
+    "optionPageTimerListRefreshSuccess": {
+        "message": "刷新成功",
+        "description": "定时器列表刷新成功提示"
+    },
+    "optionPageTimerListRefreshFail": {
+        "message": "刷新失败",
+        "description": "定时器列表刷新失败提示"
+    },
+    "optionPageTimerFormName": {
+        "message": "名称",
+        "description": "表单第一项项名"
+    },
+    "optionPageTimerFormNameHint": {
+        "message": "请输入定时器名称",
+        "description": "表单第一项提示信息"
+    },
+    "optionPageTimerFormType": {
+        "message": "类型",
+        "description": "表单第二项项名"
+    },
+    "optionPageTimerFormTypeHint": {
+        "message": "请选择定时器类型",
+        "description": "表单第二项提示信息"
+    },
+    "optionPageTimerFormTypeOnBoot": {
+        "message": "扩展启动后立即执行",
+        "description": "表单第二项第一个选择项项名"
+    },
+    "optionPageTimerFormTypeAfterBoot": {
+        "message": "扩展启动后延时执行",
+        "description": "表单第二项第二个选择项项名"
+    },
+    "optionPageTimerFormTypeDaily": {
+        "message": "每天执行",
+        "description": "表单第二项第三个选择项项名"
+    },
+    "optionPageTimerFormTypeInterval": {
+        "message": "每间隔一段时间执行",
+        "description": "表单第二项第四个选择项项名"
+    },
+    "optionPageTimerFormTypeOnce": {
+        "message": "仅执行一次",
+        "description": "表单第二项第五个选择项项名"
+    },
+    "optionPageTimerFormDelay": {
+        "message": "延迟时间",
+        "description": "表单第三项项名"
+    },
+    "optionPageTimerFormTimePoint": {
+        "message": "时间点",
+        "description": "表单第四项项名"
+    },
+    "optionPageTimerFormTimePointHint": {
+        "message": "请选择一个时间点",
+        "description": "表单第四项提示信息"
+    },
+    "optionPageTimerFormTimeInterval": {
+        "message": "时间间隔",
+        "description": "表单第五项项名"
+    },
+    "optionPageTimerFormRetry": {
+        "message": "失败后重试",
+        "description": "表单第六项项名"
+    },
+    "optionPageTimerFormRetryInterval": {
+        "message": "重试时间间隔",
+        "description": "表单第七项项名"
+    },
+    "optionPageTimerFormScripts": {
+        "message": "脚本",
+        "description": "表单第八项项名"
+    },
+    "optionPageTimerFormScriptsHint": {
+        "message": "请编写脚本",
+        "description": "表单第八项提示信息"
+    },
+    "optionPageTimerFormCancel": {
+        "message": "取消",
+        "description": "表单的取消按钮"
+    },
+    "optionPageTimerFormConfirm": {
+        "message": "确定",
+        "description": "表单的确定按钮"
+    },
+    "optionPageUnitSecond": {
+        "message": "秒",
+        "description": "单位秒"
+    },
+    "optionPageMessageTitle": {
+        "message": "消息",
+        "description": "设置页中消息标签的标题"
+    },
+    "optionPageMessageButtonRefresh": {
+        "message": "刷新",
+        "description": "刷新消息列表的按钮"
+    },
+    "optionPageMessageButtonAllRead": {
+        "message": "全部标记为已读",
+        "description": "标记全部消息为已读的按钮"
+    },
+    "optionPageMessageListRefreshSuccess": {
+        "message": "刷新成功",
+        "description": "消息列表刷新成功提示"
+    },
+    "optionPageMessageListRefreshFail": {
+        "message": "刷新失败",
+        "description": "消息列表刷新失败提示"
+    },
+    "optionPageMessageListTypeSuccess": {
+        "message": "成功",
+        "description": "消息类型为成功"
+    },
+    "optionPageMessageListTypeFail": {
+        "message": "失败",
+        "description": "消息类型为失败"
+    },
+    "optionPageMessageListEmpty": {
+        "message": "无任何消息",
+        "description": "消息列表为空时显示的提示信息"
+    },
+    "optionPageSettingTitle": {
+        "message": "设置",
+        "description": "设置页中设置标签的标题"
+    },
+    "optionPageSettingItemsPerPage": {
+        "message": "每页显示的消息数",
+        "description": "设置标签中选项第一项的名称"
+    },
+    "optionPageSettingMaxMessages": {
+        "message": "最大消息存储条数",
+        "description": "设置标签中选项第二项的名称"
+    },
+    "optionPageSettingMaxMessagesHint": {
+        "message": "（0表示不限制）",
+        "description": "设置标签中选项第二项的提示信息"
+    },
+    "optionPageSettingItemsShown": {
+        "message": "扩展图标弹出页面显示的消息数",
+        "description": "设置标签中选项第三项的提示信息"
+    },
+    "optionPageSettingBadgeOnlyFail": {
+        "message": "扩展图标仅提示失败消息的未读数",
+        "description": "设置标签中选项第四项的名称"
+    },
+    "popupPageTitle": {
+        "message": "消息",
+        "description": "扩展图标弹出页面的标题"
+    },
+    "popupPageButtonSeeMore": {
+        "message": "查看更多",
+        "description": "弹出页面的查看更多按钮"
+    },
+    "popupPageButtonAllRead": {
+        "message": "全部已读",
+        "description": "弹出页面的全部已读按钮"
+    },
+    "popupPageMessageListItemHint": {
+        "message": "标记为已读",
+        "description": "弹出页面的消息列表项提示"
+    },
+    "popupPageMessageListEmpty": {
+        "message": "无任何消息",
+        "description": "弹出页面的消息列表为空时显示的提示信息"
+    }
+}

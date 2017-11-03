@@ -1,0 +1,246 @@
+{
+    "extensionName": {
+        "message": "Timers",
+        "description": "Name of the extension."
+    },
+    "extensionDescription": {
+        "message": "Customize timers to run your scripts.",
+        "description": "Description of the extension."
+    },
+    "optionPageTitle": {
+        "message": "Setting",
+        "description": "Title of the option page."
+    },
+    "optionPageTimerTitle": {
+        "message": "Timers",
+        "description": "Title of the timers' tab in the option page."
+    },
+    "optionPageTimerButtonAdd": {
+        "message": "Add",
+        "description": "The add button in the timers' tab."
+    },
+    "optionPageTimerButtonRefresh": {
+        "message": "Refresh",
+        "description": "The refresh button in the timers' tab."
+    },
+    "optionPageTimerListEmpty": {
+        "message": "No Timer",
+        "description": "Hint shown when the timer list is empty."
+    },
+    "optionPageTimerListEnable": {
+        "message": "Enable",
+        "description": "The header of the 1st row of the timer list."
+    },
+    "optionPageTimerListName": {
+        "message": "Name",
+        "description": "The header of the 2nd row of the timer list."
+    },
+    "optionPageTimerListType": {
+        "message": "Type",
+        "description": "The header of the 3rd row of the timer list."
+    },
+    "optionPageTimerListLast": {
+        "message": "Last Time",
+        "description": "The header of the 4th row of the timer list."
+    },
+    "optionPageTimerListLastResult": {
+        "message": "Last Result",
+        "description": "The header of the 5th row of the timer list."
+    },
+    "optionPageTimerListStateSuccess": {
+        "message": "Success",
+        "description": "Success state of timers."
+    },
+    "optionPageTimerListStateFail": {
+        "message": "Fail",
+        "description": "Fail state of timers."
+    },
+    "optionPageTimerListStateRunning": {
+        "message": "Running",
+        "description": "Running state of timers."
+    },
+    "optionPageTimerListStateBeforeTrigger": {
+        "message": "Before Trigger",
+        "description": "Before trigger state of timers."
+    },
+    "optionPageTimerListNext": {
+        "message": "Next Time",
+        "description": "The header of the 6th row of the timer list."
+    },
+    "optionPageTimerListModify": {
+        "message": "Modify",
+        "description": "The header of the 7th row of the timer list."
+    },
+    "optionPageTimerListButtonEdit": {
+        "message": "Edit",
+        "description": "The tooltip of edit button of the timer list."
+    },
+    "optionPageTimerListButtonDelete": {
+        "message": "Delete",
+        "description": "The tooltip of delete button of the timer list."
+    },
+    "optionPageTimerListRefreshSuccess": {
+        "message": "Refresh Done",
+        "description": "Hint when refresh the timer list successfully."
+    },
+    "optionPageTimerListRefreshFail": {
+        "message": "Refresh Fail",
+        "description": "Hint when fail to refresh the timer list."
+    },
+    "optionPageTimerFormName": {
+        "message": "Name",
+        "description": "The name of the form's 1st item."
+    },
+    "optionPageTimerFormNameHint": {
+        "message": "Please input the name",
+        "description": "Hint of the form's 1st item."
+    },
+    "optionPageTimerFormType": {
+        "message": "Type",
+        "description": "The name of the form's 2nd item."
+    },
+    "optionPageTimerFormTypeHint": {
+        "message": "Please select the timer's type",
+        "description": "Hint of the form's 2nd item."
+    },
+    "optionPageTimerFormTypeOnBoot": {
+        "message": "Trigger On Boot",
+        "description": "The 1st selection of the form's 2nd item."
+    },
+    "optionPageTimerFormTypeAfterBoot": {
+        "message": "Delay After Boot",
+        "description": "The 2nd selection of the form's 2nd item."
+    },
+    "optionPageTimerFormTypeDaily": {
+        "message": "Trigger Daily",
+        "description": "The 3th selection of the form's 2nd item."
+    },
+    "optionPageTimerFormTypeInterval": {
+        "message": "Trigger At Intervals",
+        "description": "The 4th selection of the form's 2nd item."
+    },
+    "optionPageTimerFormTypeOnce": {
+        "message": "Trigger Once",
+        "description": "The 5th selection of the form's 2nd item."
+    },
+    "optionPageTimerFormDelay": {
+        "message": "Delay",
+        "description": "The name of the form's 3th item."
+    },
+    "optionPageTimerFormTimePoint": {
+        "message": "Time Point",
+        "description": "The name of the form's 4th item."
+    },
+    "optionPageTimerFormTimePointHint": {
+        "message": "Please select a time point",
+        "description": "Hint of the form's 4th item."
+    },
+    "optionPageTimerFormTimeInterval": {
+        "message": "Time Interval",
+        "description": "The name of the form's 5th item."
+    },
+    "optionPageTimerFormRetry": {
+        "message": "Retry After Fail",
+        "description": "The name of the form's 6th item."
+    },
+    "optionPageTimerFormRetryInterval": {
+        "message": "Retry Interval",
+        "description": "The name of the form's 7th item."
+    },
+    "optionPageTimerFormScripts": {
+        "message": "Scripts",
+        "description": "The name of the form's 8th item."
+    },
+    "optionPageTimerFormScriptsHint": {
+        "message": "Please write some scripts",
+        "description": "Hint of the form's 8th item."
+    },
+    "optionPageTimerFormCancel": {
+        "message": "Cancel",
+        "description": "The cancel button of the form."
+    },
+    "optionPageTimerFormConfirm": {
+        "message": "OK",
+        "description": "The confirm button of the form."
+    },
+    "optionPageUnitSecond": {
+        "message": "s",
+        "description": "Unit of second"
+    },
+    "optionPageMessageTitle": {
+        "message": "Messages",
+        "description": "Title of the messages' tab in the option page."
+    },
+    "optionPageMessageButtonRefresh": {
+        "message": "Refresh",
+        "description": "The refresh button in the messages' tab."
+    },
+    "optionPageMessageButtonAllRead": {
+        "message": "Mark All As Read",
+        "description": "The button for marking all messages as read."
+    },
+    "optionPageMessageListRefreshSuccess": {
+        "message": "Refresh Done",
+        "description": "Hint when refresh the message list successfully."
+    },
+    "optionPageMessageListRefreshFail": {
+        "message": "Refresh Fail",
+        "description": "Hint when fail to refresh the message list."
+    },
+    "optionPageMessageListTypeSuccess": {
+        "message": "Success",
+        "description": "Type of message is success."
+    },
+    "optionPageMessageListTypeFail": {
+        "message": "Fail",
+        "description": "Type of message is fail."
+    },
+    "optionPageMessageListEmpty": {
+        "message": "No Message",
+        "description": "Hint shown when message list is empty."
+    },
+    "optionPageSettingTitle": {
+        "message": "Setting",
+        "description": "Title of the setting's tab in the option page."
+    },
+    "optionPageSettingItemsPerPage": {
+        "message": "Messages Displayed per Page",
+        "description": "The 1st option in the setting's tab."
+    },
+    "optionPageSettingMaxMessages": {
+        "message": "Max Messages Saved",
+        "description": "The 2nd option in the setting's tab."
+    },
+    "optionPageSettingMaxMessagesHint": {
+        "message": "(0 means unlimited)",
+        "description": "Hint of the 2nd option in the setting's tab."
+    },
+    "optionPageSettingItemsShown": {
+        "message": "Messages Shown in The Popup Page",
+        "description": "The 3rd option in the setting's tab."
+    },
+    "optionPageSettingBadgeOnlyFail": {
+        "message": "Only Show The Number of Fail Unread Messages on Icon",
+        "description": "The 4th option in the setting's tab."
+    },
+    "popupPageTitle": {
+        "message": "Messages",
+        "description": "Title of the popup page."
+    },
+    "popupPageButtonSeeMore": {
+        "message": "See More",
+        "description": "The see more button in the popup page."
+    },
+    "popupPageButtonAllRead": {
+        "message": "Mark All As Read",
+        "description": "The mark all as read button in the popup page."
+    },
+    "popupPageMessageListItemHint": {
+        "message": "Mark As Read",
+        "description": "The tooltip of the message list item in the popup page."
+    },
+    "popupPageMessageListEmpty": {
+        "message": "No Message",
+        "description": "Hint shown when message list is empty in the popup page."
+    }
+}

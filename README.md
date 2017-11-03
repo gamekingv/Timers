@@ -1,0 +1,1 @@
+A Firefox Webextension
