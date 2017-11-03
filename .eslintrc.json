@@ -6,6 +6,7 @@
         "jquery": true,
         "webextensions": true
     },
+    "parser": "babel-eslint",
     "globals": {
         "Vue": true
     },
