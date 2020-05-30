@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "__MSG_extensionName__",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "__MSG_extensionDescription__",
     "default_locale": "en",
     "icons": {
@@ -21,6 +21,7 @@
     },
     "background": {
         "scripts": [
+            "libs/js/browser-polyfill.min.js",
             "utils/config.js",
             "utils/db.js",
             "utils/timer.js",

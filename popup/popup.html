@@ -7,15 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/libs/css/element.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script src="/libs/js/browser-polyfill.min.js"></script>
     <script src="js/init.js"></script>
 </head>
 
 <body>
     <div id="popup-panel" @contextmenu.prevent>
         <div class="message-list" v-if="messages.length > 0">
-            <div class="message-item" v-for="message in messages" :title="i18nMessage.messageListItemHint" @click="setRead(message)"
-                :key="message.id">
-                <i :class="[`el-icon-${message.type == 'success' ? 'check' : 'close'}`, 'message-icon', message.type]"></i>
+            <div class="message-item" v-for="message in messages" :title="i18nMessage.messageListItemHint"
+                @click="setRead(message)" :key="message.id">
+                <i
+                    :class="[`el-icon-${message.type == 'success' ? 'check' : 'close'}`, 'message-icon', message.type]"></i>
                 <div class="message-content">
                     <span class="message-info">{{ message.info }}</span>
                     <span class="message-name">{{ message.timerName }}</span>
